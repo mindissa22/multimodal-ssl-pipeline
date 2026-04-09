@@ -1,13 +1,13 @@
 """
 preprocess_har.py
-=================
-Preprocesses PAMAP2 and WISDM into a single harmonised HAR dataset.
+
+Preprocesses PAMAP2 and WISDM into a single HAR dataset.
 
 Outputs
--------
+
 data/processed/har/
-    har_pretrain.npy         -- [N, 6, 200] float32, no labels (10s windows, no overlap)
-    har_supervised.npy       -- [N, 6, 100] float32, with labels (5s windows, 50% overlap)
+    har_pretrain.npy          [N, 6, 200] float32, no labels (10s windows, no overlap)
+    har_supervised.npy        [N, 6, 100] float32, with labels (5s windows, 50% overlap)
     har_pretrain_metadata.csv
     har_supervised_metadata.csv
 submission_sample/har/
@@ -28,9 +28,9 @@ from scipy.signal import butter, sosfilt
 
 warnings.filterwarnings("ignore")
 
-# ---------------------------------------------------------------------------
+
 # Logging
-# ---------------------------------------------------------------------------
+
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] %(message)s",
@@ -41,9 +41,9 @@ logging.basicConfig(
 )
 log = logging.getLogger(__name__)
 
-# ---------------------------------------------------------------------------
+
 # Paths
-# ---------------------------------------------------------------------------
+
 PROJECT_ROOT   = Path(__file__).parent
 DATA_RAW       = PROJECT_ROOT / "data" / "raw"
 DATA_INTERIM   = PROJECT_ROOT / "data" / "interim" / "har"
@@ -53,9 +53,9 @@ SAMPLE_DIR     = PROJECT_ROOT / "submission_sample" / "har"
 for d in [DATA_INTERIM, DATA_PROCESSED, SAMPLE_DIR]:
     d.mkdir(parents=True, exist_ok=True)
 
-# ---------------------------------------------------------------------------
+
 # Constants
-# ---------------------------------------------------------------------------
+
 TARGET_HZ         = 20
 CHANNELS          = ["acc_x", "acc_y", "acc_z", "gyr_x", "gyr_y", "gyr_z"]
 PRETRAIN_WINDOW   = 10 * TARGET_HZ        # 200 samples
@@ -85,9 +85,9 @@ WISDM_LABEL_MAP = {
     "R": "walking_dog", "S": "kicking",
 }
 
-# ---------------------------------------------------------------------------
-# Signal processing helpers
-# ---------------------------------------------------------------------------
+
+# Signal processing 
+
 
 def butter_lowpass(cutoff_hz, fs, order=4):
     nyq = fs / 2.0
@@ -113,9 +113,9 @@ def forward_fill_nans(data, max_gap_samples=10):
     filled = df.fillna(method="ffill", limit=max_gap_samples)
     return filled.values
 
-# ---------------------------------------------------------------------------
+
 # Windowing
-# ---------------------------------------------------------------------------
+
 
 def make_windows(signal, labels, window_size, stride,
                  subject_id, dataset, source_file, include_labels=True):
@@ -165,9 +165,9 @@ def make_windows(signal, labels, window_size, stride,
 
     return windows, metadata
 
-# ---------------------------------------------------------------------------
+
 # PAMAP2
-# ---------------------------------------------------------------------------
+
 
 def load_pamap2(raw_dir):
     dat_files = sorted(glob.glob(str(raw_dir / "**" / "Protocol" / "*.dat"), recursive=True))
@@ -238,9 +238,9 @@ def preprocess_pamap2(df):
     log.info(f"PAMAP2: {len(pretrain_windows)} pretrain, {len(supervised_windows)} supervised windows")
     return (pretrain_windows, pretrain_meta), (supervised_windows, supervised_meta)
 
-# ---------------------------------------------------------------------------
+
 # WISDM
-# ---------------------------------------------------------------------------
+
 
 def load_wisdm(raw_dir):
     accel_files = sorted(raw_dir.rglob("*accel_watch*"))
@@ -340,9 +340,9 @@ def preprocess_wisdm(df):
     log.info(f"WISDM: {len(pretrain_windows)} pretrain, {len(supervised_windows)} supervised windows")
     return (pretrain_windows, pretrain_meta), (supervised_windows, supervised_meta)
 
-# ---------------------------------------------------------------------------
+
 # Save outputs
-# ---------------------------------------------------------------------------
+
 
 def save_outputs(pretrain_windows, pretrain_meta,
                  supervised_windows, supervised_meta):
@@ -391,9 +391,9 @@ def save_outputs(pretrain_windows, pretrain_meta,
     log.info(f"Supervised shape: {X_supervised.shape}")
     log.info("Done.")
 
-# ---------------------------------------------------------------------------
+
 # Main
-# ---------------------------------------------------------------------------
+
 
 def main():
     log.info("=" * 60)
