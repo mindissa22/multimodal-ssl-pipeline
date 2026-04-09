@@ -244,8 +244,8 @@ def preprocess_pamap2(df):
 
 
 def load_wisdm(raw_dir):
-    accel_files = sorted(raw_dir.rglob("*accel_watch*"))
-    gyro_files  = sorted(raw_dir.rglob("*gyro_watch*"))
+    accel_files = sorted(raw_dir.rglob("*accel_watch*.txt"))
+    gyro_files  = sorted(raw_dir.rglob("*gyro_watch*.txt"))
 
     if not accel_files:
         raise FileNotFoundError(f"No WISDM watch accelerometer files found under {raw_dir}")
@@ -292,15 +292,18 @@ def load_wisdm(raw_dir):
         accel_df = accel_df.sort_values("timestamp")
         gyro_df  = gyro_df.sort_values("timestamp")
 
-        merged = pd.merge_asof(
-            accel_df,
-            gyro_df[["timestamp", "gyr_x", "gyr_y", "gyr_z"]],
-            on="timestamp", tolerance=25_000_000, direction="nearest"
-        )
+        # Simple column-based merge instead of timestamp merge
+        accel_df = accel_df.reset_index(drop=True)
+        gyro_df  = gyro_df.reset_index(drop=True)
+        min_len  = min(len(accel_df), len(gyro_df))
+        merged   = accel_df.iloc[:min_len].copy()
+        merged["gyr_x"] = gyro_df["gyr_x"].iloc[:min_len].values
+        merged["gyr_y"] = gyro_df["gyr_y"].iloc[:min_len].values
+        merged["gyr_z"] = gyro_df["gyr_z"].iloc[:min_len].values
         merged["source_file"]   = accel_file.name
         merged["unified_label"] = merged["activity_code"].map(WISDM_LABEL_MAP)
         all_subjects.append(merged)
-
+       
     combined = pd.concat(all_subjects, ignore_index=True)
     log.info(f"WISDM: {len(combined)} rows total")
     return combined
