@@ -1,0 +1,15 @@
+# Data directories — too large for GitHub, upload to Dropbox instead
+data/
+
+# Logs
+logs/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+venv/
+
+# Mac
+.DS_Store
