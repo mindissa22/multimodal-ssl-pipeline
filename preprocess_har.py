@@ -143,7 +143,8 @@ def make_windows(signal, labels, window_size, stride,
             counts = pd.Series(valid).value_counts()
             if len(counts) >= 2 and counts.iloc[0] == counts.iloc[1]:
                 continue
-            label_val = counts.index[0]
+            label_int = counts.index[0]
+            label_val = label_list[label_int] if label_int >= 0 else "unlabelled"
             if label_val not in SHARED_LABELS:
                 continue
 
