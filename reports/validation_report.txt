@@ -1,0 +1,73 @@
+============================================================
+VALIDATION REPORT
+Generated: 2026-04-10T01:37:47.251483
+============================================================
+Total checks: 55
+Passed:       55
+Failed:       0
+Overall:      ALL PASSED ✅
+
+DETAILED RESULTS:
+------------------------------------------------------------
+✅ PASS: HAR pretrain file exists
+✅ PASS: HAR supervised file exists
+✅ PASS: HAR pretrain metadata exists
+✅ PASS: HAR supervised metadata exists
+✅ PASS: HAR manifest exists
+✅ PASS: HAR pretrain shape [N,6,200] (actual: (17610, 6, 200))
+✅ PASS: HAR supervised shape [N,6,100] (actual: (31089, 6, 100))
+✅ PASS: HAR pretrain dtype float32
+✅ PASS: HAR supervised dtype float32
+✅ PASS: HAR pretrain no NaNs
+✅ PASS: HAR pretrain no infs
+✅ PASS: HAR supervised no NaNs
+✅ PASS: HAR supervised no infs
+✅ PASS: HAR pretrain metadata has required columns
+✅ PASS: HAR pretrain metadata row count matches array (metadata rows: 17610, array rows: 17610)
+✅ PASS: HAR pretrain sampling rate is 20 Hz
+✅ PASS: HAR pretrain has both datasets (datasets found: ['wisdm' 'pamap2'])
+✅ PASS: HAR pretrain subject IDs preserved
+✅ PASS: HAR supervised metadata row count matches array
+✅ PASS: HAR supervised has labels
+✅ PASS: HAR supervised sampling rate is 20 Hz
+✅ PASS: HAR pretrain sample pack exists
+✅ PASS: HAR supervised sample pack exists
+✅ PASS: HAR pretrain sample has 100 windows (actual: 100)
+✅ PASS: HAR supervised sample has 100 windows (actual: 100)
+✅ PASS: EEG windows file exists
+✅ PASS: EEG metadata file exists
+✅ PASS: EEG manifest exists
+✅ PASS: EEG shape [N,64,640] (actual: (4917, 64, 640))
+✅ PASS: EEG dtype float32
+✅ PASS: EEG no NaNs
+✅ PASS: EEG no infs
+✅ PASS: EEG metadata row count matches array
+✅ PASS: EEG subject IDs preserved
+✅ PASS: EEG run IDs preserved
+✅ PASS: EEG event codes preserved
+✅ PASS: EEG only T1/T2 labels (unique labels: ['right_fist' 'left_fist'])
+✅ PASS: EEG sample pack exists
+✅ PASS: EEG sample has 100 windows (actual: 100)
+✅ PASS: ECG signals file exists
+✅ PASS: ECG metadata file exists
+✅ PASS: ECG manifest exists
+✅ PASS: ECG shape [N,12,1000] (actual: (21799, 12, 1000))
+✅ PASS: ECG dtype float32
+✅ PASS: ECG no NaNs
+✅ PASS: ECG no infs
+✅ PASS: ECG metadata row count matches array
+✅ PASS: ECG patient IDs preserved
+✅ PASS: ECG fold metadata present
+✅ PASS: ECG split column present
+✅ PASS: ECG has train/val/test splits (splits found: ['train' 'val' 'test'])
+✅ PASS: ECG lead names preserved
+✅ PASS: ECG sampling rate is 100 Hz
+✅ PASS: ECG sample pack exists
+✅ PASS: ECG sample has 100 records (actual: 100)
+
+RESOURCE ESTIMATES:
+------------------------------------------------------------
+Raw storage:       ~4.5 GB
+Processed storage: ~1.15 GB
+Peak RAM:          ~4 GB
+Runtime:           ~50 minutes (excluding downloads)

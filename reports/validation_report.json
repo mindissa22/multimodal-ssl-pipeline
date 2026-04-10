@@ -1,0 +1,237 @@
+{
+  "generated_at": "2026-04-10T01:37:47.250690",
+  "summary": {
+    "total_checks": 55,
+    "passed": 55,
+    "failed": 0,
+    "all_passed": true
+  },
+  "checks": {
+    "HAR pretrain file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain metadata exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised metadata exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR manifest exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain shape [N,6,200]": {
+      "status": "PASS",
+      "detail": "actual: (17610, 6, 200)"
+    },
+    "HAR supervised shape [N,6,100]": {
+      "status": "PASS",
+      "detail": "actual: (31089, 6, 100)"
+    },
+    "HAR pretrain dtype float32": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised dtype float32": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain no NaNs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain no infs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised no NaNs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised no infs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain metadata has required columns": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain metadata row count matches array": {
+      "status": "PASS",
+      "detail": "metadata rows: 17610, array rows: 17610"
+    },
+    "HAR pretrain sampling rate is 20 Hz": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain has both datasets": {
+      "status": "PASS",
+      "detail": "datasets found: ['wisdm' 'pamap2']"
+    },
+    "HAR pretrain subject IDs preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised metadata row count matches array": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised has labels": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised sampling rate is 20 Hz": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain sample pack exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR supervised sample pack exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "HAR pretrain sample has 100 windows": {
+      "status": "PASS",
+      "detail": "actual: 100"
+    },
+    "HAR supervised sample has 100 windows": {
+      "status": "PASS",
+      "detail": "actual: 100"
+    },
+    "EEG windows file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG metadata file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG manifest exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG shape [N,64,640]": {
+      "status": "PASS",
+      "detail": "actual: (4917, 64, 640)"
+    },
+    "EEG dtype float32": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG no NaNs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG no infs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG metadata row count matches array": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG subject IDs preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG run IDs preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG event codes preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG only T1/T2 labels": {
+      "status": "PASS",
+      "detail": "unique labels: ['right_fist' 'left_fist']"
+    },
+    "EEG sample pack exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "EEG sample has 100 windows": {
+      "status": "PASS",
+      "detail": "actual: 100"
+    },
+    "ECG signals file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG metadata file exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG manifest exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG shape [N,12,1000]": {
+      "status": "PASS",
+      "detail": "actual: (21799, 12, 1000)"
+    },
+    "ECG dtype float32": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG no NaNs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG no infs": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG metadata row count matches array": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG patient IDs preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG fold metadata present": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG split column present": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG has train/val/test splits": {
+      "status": "PASS",
+      "detail": "splits found: ['train' 'val' 'test']"
+    },
+    "ECG lead names preserved": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG sampling rate is 100 Hz": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG sample pack exists": {
+      "status": "PASS",
+      "detail": ""
+    },
+    "ECG sample has 100 records": {
+      "status": "PASS",
+      "detail": "actual: 100"
+    }
+  },
+  "resource_estimate": {
+    "raw_storage": "~4.5 GB total (PAMAP2: 656MB, WISDM: 295MB, EEGMMIDB: 1.9GB, PTB-XL: 1.7GB)",
+    "processed_storage": "~1.15 GB total (HAR: ~350MB, EEG: ~300MB, ECG: ~500MB)",
+    "peak_ram": "~4 GB (EEG processing is most RAM-intensive)",
+    "runtime_estimate": "~50 minutes total (downloads excluded)"
+  }
+}
