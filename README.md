@@ -125,6 +125,17 @@ This will:
 - Write validation report to `reports/validation_report.txt`
 - Write machine-readable report to `reports/validation_report.json`
 
+### Step 6 — Run smoke tests
+
+```bash
+pytest tests/ -v
+```
+
+This will:
+- Check all array shapes and dtypes
+- Verify sample packs have 100 windows each
+- Validate all manifest JSON files
+
 ## Processed Output Format
 
 All outputs are stored as float32 NumPy arrays with shape [N, C, T]:
