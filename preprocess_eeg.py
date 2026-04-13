@@ -1,7 +1,7 @@
 """
 preprocess_eeg.py
-=================
-Preprocesses EEGMMIDB into event-aligned windows for motor imagery classification.
+
+Preprocesses EEGMMIDB into event aligned windows for motor imagery classification.
 
 Outputs
 -------
@@ -12,10 +12,9 @@ submission_sample/eeg/
     eeg_windows_sample.npy   -- 100 windows
     eeg_metadata_sample.csv  -- 100 rows
 
-Design decisions:
+Design:
 - Only runs 4, 8, 12 used (left vs right fist imagery)
 - T1 = left fist, T2 = right fist, T0 (rest) excluded
-- Native 160 Hz retained (motor imagery signals up to ~40 Hz)
 - 4-second windows starting at T1/T2 onset = 640 samples
 - Band-pass filter 1-40 Hz, notch at 60 Hz
 - Common average reference applied
@@ -88,7 +87,7 @@ def preprocess_subject(subject_dir: Path):
         # Band-pass filter 1-40 Hz (removes slow drift and high freq noise)
         raw.filter(l_freq=1.0, h_freq=40.0, method="iir", verbose=False)
 
-        # Notch filter at 60 Hz (US power line interference)
+        # Notch filter at 60 Hz 
         raw.notch_filter(freqs=60.0, verbose=False)
 
         # Common average reference
