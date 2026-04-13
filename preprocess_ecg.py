@@ -249,6 +249,7 @@ def main():
         "generated_at": datetime.utcnow().isoformat(),
         "ecg_signals": {
             "file":             "data/processed/ecg/ecg_signals.npy",
+            "file_size_bytes":  (DATA_PROCESSED / "ecg_signals.npy").stat().st_size,
             "shape":            list(X.shape),
             "dtype":            "float32",
             "n_records":        len(X),

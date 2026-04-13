@@ -217,6 +217,7 @@ def main():
         "generated_at": datetime.utcnow().isoformat(),
         "eeg_windows": {
             "file":            "data/processed/eeg/eeg_windows.npy",
+            "file_size_bytes": (DATA_PROCESSED / "eeg_windows.npy").stat().st_size,
             "shape":           list(X.shape),
             "dtype":           "float32",
             "n_windows":       len(X),
