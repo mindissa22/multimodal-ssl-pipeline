@@ -277,11 +277,11 @@ def write_reports():
         },
         "checks": results,
         "resource_estimate": {
-            "raw_storage":       "~4.5 GB total (PAMAP2: 656MB, WISDM: 295MB, EEGMMIDB: 1.9GB, PTB-XL: 1.7GB)",
-            "processed_storage": "~1.15 GB total (HAR: ~350MB, EEG: ~300MB, ECG: ~500MB)",
-            "peak_ram":          "~4 GB (EEG processing is most RAM-intensive)",
-            "runtime_estimate":  "~50 minutes total (downloads excluded)",
-        }
+    "raw_storage":       "~8.5 GB total (PAMAP2: 2.9GB, WISDM: 1.5GB, EEGMMIDB: 3.4GB, PTB-XL: 616MB, mHealth: 72MB)",
+    "processed_storage": "~1.9 GB",
+    "peak_ram":          "~4 GB estimated (EEG processing, subject-by-subject chunking)",
+    "runtime_estimate":  "~50 minutes total (dowloads excluded)",
+}
     }
 
     with open(REPORTS_DIR / "validation_report.json", "w") as f:
@@ -308,14 +308,14 @@ def write_reports():
         lines.append(f"{icon} {result['status']}: {name}{detail}")
 
     lines += [
-        "",
-        "RESOURCE ESTIMATES:",
-        "-" * 60,
-        "Raw storage:       ~4.5 GB",
-        "Processed storage: ~1.15 GB",
-        "Peak RAM:          ~4 GB",
-        "Runtime:           ~50 minutes (excluding downloads)",
-    ]
+    "",
+    "RESOURCE ESTIMATES:",
+    "-" * 60,
+    "Raw storage:       ~8.5 GB (PAMAP2: 2.9GB, WISDM: 1.5GB, EEGMMIDB: 3.4GB, PTB-XL: 616MB, mHealth: 72MB)",
+    "Processed storage: ~1.9 GB",
+    "Peak RAM:          ~4 GB",
+    "Runtime:           ~50 minutes (downloads excluded)",
+]
 
     report_text = "\n".join(lines)
     with open(REPORTS_DIR / "validation_report.txt", "w") as f:

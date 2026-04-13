@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-10T01:37:47.250690",
+  "generated_at": "2026-04-13T21:01:01.548456",
   "summary": {
     "total_checks": 55,
     "passed": 55,
@@ -29,11 +29,11 @@
     },
     "HAR pretrain shape [N,6,200]": {
       "status": "PASS",
-      "detail": "actual: (17610, 6, 200)"
+      "detail": "actual: (18291, 6, 200)"
     },
     "HAR supervised shape [N,6,100]": {
       "status": "PASS",
-      "detail": "actual: (31089, 6, 100)"
+      "detail": "actual: (32607, 6, 100)"
     },
     "HAR pretrain dtype float32": {
       "status": "PASS",
@@ -65,7 +65,7 @@
     },
     "HAR pretrain metadata row count matches array": {
       "status": "PASS",
-      "detail": "metadata rows: 17610, array rows: 17610"
+      "detail": "metadata rows: 18291, array rows: 18291"
     },
     "HAR pretrain sampling rate is 20 Hz": {
       "status": "PASS",
@@ -73,7 +73,7 @@
     },
     "HAR pretrain has both datasets": {
       "status": "PASS",
-      "detail": "datasets found: ['wisdm' 'pamap2']"
+      "detail": "datasets found: ['wisdm' 'pamap2' 'mhealth']"
     },
     "HAR pretrain subject IDs preserved": {
       "status": "PASS",
@@ -229,9 +229,9 @@
     }
   },
   "resource_estimate": {
-    "raw_storage": "~4.5 GB total (PAMAP2: 656MB, WISDM: 295MB, EEGMMIDB: 1.9GB, PTB-XL: 1.7GB)",
-    "processed_storage": "~1.15 GB total (HAR: ~350MB, EEG: ~300MB, ECG: ~500MB)",
-    "peak_ram": "~4 GB (EEG processing is most RAM-intensive)",
-    "runtime_estimate": "~50 minutes total (downloads excluded)"
+    "raw_storage": "~8.5 GB total (PAMAP2: 2.9GB, WISDM: 1.5GB, EEGMMIDB: 3.4GB, PTB-XL: 616MB, mHealth: 72MB)",
+    "processed_storage": "~1.9 GB",
+    "peak_ram": "~4 GB estimated (EEG processing, subject-by-subject chunking)",
+    "runtime_estimate": "~50 minutes total (dowloads excluded)"
   }
 }

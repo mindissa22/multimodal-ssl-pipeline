@@ -1,6 +1,6 @@
 ============================================================
 VALIDATION REPORT
-Generated: 2026-04-10T01:37:47.251483
+Generated: 2026-04-13T21:01:01.549641
 ============================================================
 Total checks: 55
 Passed:       55
@@ -14,8 +14,8 @@ DETAILED RESULTS:
 ✅ PASS: HAR pretrain metadata exists
 ✅ PASS: HAR supervised metadata exists
 ✅ PASS: HAR manifest exists
-✅ PASS: HAR pretrain shape [N,6,200] (actual: (17610, 6, 200))
-✅ PASS: HAR supervised shape [N,6,100] (actual: (31089, 6, 100))
+✅ PASS: HAR pretrain shape [N,6,200] (actual: (18291, 6, 200))
+✅ PASS: HAR supervised shape [N,6,100] (actual: (32607, 6, 100))
 ✅ PASS: HAR pretrain dtype float32
 ✅ PASS: HAR supervised dtype float32
 ✅ PASS: HAR pretrain no NaNs
@@ -23,9 +23,9 @@ DETAILED RESULTS:
 ✅ PASS: HAR supervised no NaNs
 ✅ PASS: HAR supervised no infs
 ✅ PASS: HAR pretrain metadata has required columns
-✅ PASS: HAR pretrain metadata row count matches array (metadata rows: 17610, array rows: 17610)
+✅ PASS: HAR pretrain metadata row count matches array (metadata rows: 18291, array rows: 18291)
 ✅ PASS: HAR pretrain sampling rate is 20 Hz
-✅ PASS: HAR pretrain has both datasets (datasets found: ['wisdm' 'pamap2'])
+✅ PASS: HAR pretrain has both datasets (datasets found: ['wisdm' 'pamap2' 'mhealth'])
 ✅ PASS: HAR pretrain subject IDs preserved
 ✅ PASS: HAR supervised metadata row count matches array
 ✅ PASS: HAR supervised has labels
@@ -67,7 +67,7 @@ DETAILED RESULTS:
 
 RESOURCE ESTIMATES:
 ------------------------------------------------------------
-Raw storage:       ~4.5 GB
-Processed storage: ~1.15 GB
+Raw storage:       ~8.5 GB (PAMAP2: 2.9GB, WISDM: 1.5GB, EEGMMIDB: 3.4GB, PTB-XL: 616MB, mHealth: 72MB)
+Processed storage: ~1.9 GB
 Peak RAM:          ~4 GB
-Runtime:           ~50 minutes (excluding downloads)
+Runtime:           ~50 minutes (downloads excluded)
