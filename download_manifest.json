@@ -1,0 +1,35 @@
+{
+  "generated_at": "2026-04-09T00:00:00",
+  "datasets": {
+    "pamap2": {
+      "url": "https://archive.ics.uci.edu/static/public/231/pamap2+physical+activity+monitoring.zip",
+      "version": "1.0",
+      "download_date": "2026-04-09",
+      "local_path": "data/raw/pamap2"
+    },
+    "wisdm": {
+      "url": "https://archive.ics.uci.edu/static/public/507/wisdm+smartphone+and+smartwatch+activity+and+biometrics+dataset.zip",
+      "version": "1.0",
+      "download_date": "2026-04-09",
+      "local_path": "data/raw/wisdm"
+    },
+    "eegmmidb": {
+      "url": "https://physionet.org/files/eegmmidb/1.0.0/",
+      "version": "1.0.0",
+      "download_date": "2026-04-09",
+      "local_path": "data/raw/eegmmidb"
+    },
+    "ptbxl": {
+      "url": "https://physionet.org/files/ptb-xl/1.0.3/",
+      "version": "1.0.3",
+      "download_date": "2026-04-09",
+      "local_path": "data/raw/ptbxl"
+    },
+    "mhealth": {
+      "url": "https://archive.ics.uci.edu/static/public/319/mhealth+dataset.zip",
+      "version": "1.0",
+      "download_date": "2026-04-13",
+      "local_path": "data/raw/mhealth"
+    }
+  }
+}
