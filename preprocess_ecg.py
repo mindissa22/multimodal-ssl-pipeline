@@ -1,7 +1,7 @@
 """
 preprocess_ecg.py
-=================
-Preprocesses PTB-XL into cleaned 12-lead ECG arrays with patient-safe splits.
+
+Preprocesses PTB-XL into cleaned 12-lead ECG arrays with patient safe splits.
 
 Outputs
 -------
@@ -12,15 +12,15 @@ submission_sample/ecg/
     ecg_signals_sample.npy   -- 100 records
     ecg_metadata_sample.csv  -- 100 rows
 
-Design decisions:
-- 100 Hz selected over 500 Hz (sufficient for clinical ECG features,
-  quarter the storage, no benefit for classification tasks)
+Design:
+- 100 Hz selected over 500 Hz (sufficient for clinical ECG features according to the literature,
+  does not occupy a lot of storage)
 - Train/val/test split follows provided strat_fold column:
     folds 1-8 = train, fold 9 = val, fold 10 = test
-- Patient-level assignment guaranteed by dataset authors (no leakage)
-- Baseline wander removed with 0.5 Hz high-pass filter
-- Notch filter at 50 Hz (European power line, recordings from Germany)
-- Per-lead z-score normalisation
+- Patient level assignment guaranteed by dataset authors (no leakage)
+- Baseline wander removed with 0.5 Hz high-pass filter (according to the literature)
+- Notch filter at 50 Hz (European power line)
+- Per lead z-score normalisation
 - Output shape: [N, 12, 1000] (12 leads x 1000 timepoints at 100 Hz)
 """
 
