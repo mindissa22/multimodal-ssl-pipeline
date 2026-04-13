@@ -188,8 +188,8 @@ in all metadata to prevent data leakage across splits.
 
 | | Storage |
 |--|--|
-| Raw data | ~4.5 GB |
-| Processed data | ~1.15 GB |
+| Raw data | ~8.5 GB (PAMAP2: 2.9 GB, WISDM: 1.5 GB, EEGMMIDB: 3.4 GB, PTB-XL: 616 MB, mHealth: 72 MB) |
+| Processed data | ~1.9 GB |
 | Peak RAM | ~4 GB (EEG processing) |
 | Runtime | ~50 minutes (excluding downloads) |
 
